@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "B-.##",
+ "creation": "2022-08-03 15:56:49.910969",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "building_details_section",
+  "company",
+  "date",
+  "building_name",
+  "building_owner",
+  "column_break_6",
+  "contact",
+  "no_of_units",
+  "available_units"
+ ],
+ "fields": [
+  {
+   "fieldname": "building_details_section",
+   "fieldtype": "Section Break",
+   "label": "Building details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "building_name",
+   "fieldtype": "Data",
+   "label": "Building name"
+  },
+  {
+   "fieldname": "building_owner",
+   "fieldtype": "Data",
+   "label": "Building owner"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "no_of_units",
+   "fieldtype": "Data",
+   "label": "No of units",
+   "read_only": 1
+  },
+  {
+   "fieldname": "available_units",
+   "fieldtype": "Data",
+   "label": "Available units",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-03 15:57:42.143018",
+ "modified_by": "Administrator",
+ "module": "Craft Property MS",
+ "name": "Building",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

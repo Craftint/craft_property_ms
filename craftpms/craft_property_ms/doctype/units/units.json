@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "UN-.###",
+ "creation": "2022-08-03 16:10:04.796231",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "general_informations_section",
+  "unit_status",
+  "building",
+  "building_name",
+  "contract",
+  "column_break_6",
+  "unit_owner",
+  "contract_start_date",
+  "contract_end_date",
+  "unit_details_section",
+  "bedrooms_with_bathrooms",
+  "master_rooms",
+  "common_bathroom",
+  "furnished",
+  "column_break_15",
+  "no_of_parking",
+  "buildup_area",
+  "carpet_area",
+  "assetsamentities_section",
+  "issue",
+  "maintenance_schedule",
+  "maintenance_visit"
+ ],
+ "fields": [
+  {
+   "fieldname": "general_informations_section",
+   "fieldtype": "Section Break",
+   "label": "General informations"
+  },
+  {
+   "fieldname": "unit_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Unit status",
+   "options": "Available\nOn lease\nBooked",
+   "reqd": 1
+  },
+  {
+   "fieldname": "building",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Building",
+   "options": "Building",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "building.building_name",
+   "fieldname": "building_name",
+   "fieldtype": "Data",
+   "label": "Building name"
+  },
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Contract"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "contract.party_name",
+   "fieldname": "unit_owner",
+   "fieldtype": "Data",
+   "label": "Unit owner"
+  },
+  {
+   "fetch_from": "contract.start_date",
+   "fieldname": "contract_start_date",
+   "fieldtype": "Data",
+   "label": "Contract start date"
+  },
+  {
+   "fetch_from": "contract.end_date",
+   "fieldname": "contract_end_date",
+   "fieldtype": "Data",
+   "label": "Contract end date"
+  },
+  {
+   "fieldname": "unit_details_section",
+   "fieldtype": "Section Break",
+   "label": "Unit details"
+  },
+  {
+   "fieldname": "bedrooms_with_bathrooms",
+   "fieldtype": "Int",
+   "label": "Bedrooms with bathrooms"
+  },
+  {
+   "fieldname": "master_rooms",
+   "fieldtype": "Int",
+   "label": "Master rooms"
+  },
+  {
+   "fieldname": "common_bathroom",
+   "fieldtype": "Int",
+   "label": "Common bathroom"
+  },
+  {
+   "fieldname": "furnished",
+   "fieldtype": "Select",
+   "label": "Furnished",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_parking",
+   "fieldtype": "Int",
+   "label": "No of parking"
+  },
+  {
+   "fieldname": "buildup_area",
+   "fieldtype": "Data",
+   "label": "Buildup area"
+  },
+  {
+   "fieldname": "carpet_area",
+   "fieldtype": "Data",
+   "label": "Carpet area"
+  },
+  {
+   "fieldname": "assetsamentities_section",
+   "fieldtype": "Section Break",
+   "label": "Assets/Amentities"
+  },
+  {
+   "fieldname": "issue",
+   "fieldtype": "Link",
+   "label": "Issue",
+   "options": "Issue"
+  },
+  {
+   "fieldname": "maintenance_schedule",
+   "fieldtype": "Link",
+   "label": "Maintenance schedule",
+   "options": "Maintenance Schedule"
+  },
+  {
+   "fieldname": "maintenance_visit",
+   "fieldtype": "Link",
+   "label": "Maintenance visit",
+   "options": "Maintenance Visit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-03 16:27:03.015237",
+ "modified_by": "Administrator",
+ "module": "Craft Property MS",
+ "name": "Units",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

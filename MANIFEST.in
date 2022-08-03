@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include craftpms *.css
+recursive-include craftpms *.csv
+recursive-include craftpms *.html
+recursive-include craftpms *.ico
+recursive-include craftpms *.js
+recursive-include craftpms *.json
+recursive-include craftpms *.md
+recursive-include craftpms *.png
+recursive-include craftpms *.py
+recursive-include craftpms *.svg
+recursive-include craftpms *.txt
+recursive-exclude craftpms *.pyc

@@ -1,27 +1,31 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "B-.##",
+ "autoname": "field:building_name",
  "creation": "2022-08-03 15:56:49.910969",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "building_details_section",
-  "company",
-  "date",
   "building_name",
   "building_owner",
-  "column_break_6",
-  "contact",
+  "building_group",
   "no_of_units",
-  "available_units"
+  "available_units",
+  "address",
+  "address_display",
+  "column_break_6",
+  "photo",
+  "company",
+  "date",
+  "contact"
  ],
  "fields": [
   {
    "fieldname": "building_details_section",
    "fieldtype": "Section Break",
-   "label": "Building details"
+   "label": "Building Details"
   },
   {
    "fieldname": "company",
@@ -37,12 +41,17 @@
   {
    "fieldname": "building_name",
    "fieldtype": "Data",
-   "label": "Building name"
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Building Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "building_owner",
    "fieldtype": "Data",
-   "label": "Building owner"
+   "label": "Building Owner"
   },
   {
    "fieldname": "column_break_6",
@@ -56,19 +65,46 @@
   {
    "fieldname": "no_of_units",
    "fieldtype": "Data",
-   "label": "No of units",
+   "label": "No of Units",
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.no_of_units",
    "fieldname": "available_units",
    "fieldtype": "Data",
-   "label": "Available units",
+   "label": "Available Units",
    "read_only": 1
+  },
+  {
+   "fieldname": "building_group",
+   "fieldtype": "Data",
+   "label": "Building Group"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "depends_on": "eval:doc.address",
+   "fieldname": "address_display",
+   "fieldtype": "Small Text"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2022-08-03 15:57:42.143018",
+ "links": [
+  {
+   "link_doctype": "Unit",
+   "link_fieldname": "unit_status"
+  }
+ ],
+ "modified": "2022-08-04 16:24:21.265229",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Building",

@@ -1,5 +1,3 @@
-# Copyright (c) 2022, Aakvatech and contributors
-# For license information, please see license.txt
 
 import datetime
 
@@ -7,7 +5,7 @@ import datetime
 import frappe
 from frappe.model.document import Document
 
-class Units(Document):
+class Unit(Document):
 	def validate(self):
 		if (self.contract_start_date and self.contract_end_date):
 			if datetime.date.today() < self.contract_start_date:

@@ -9,12 +9,12 @@ class Building(Document):
 	
 @frappe.whitelist()
 def n_units(building_name= None):
-	no_of_units = frappe.db.count('Units',filters={"building_name": building_name})
+	no_of_units = frappe.db.count('Unit',filters={"building_name": building_name})
 	return no_of_units
 			
 @frappe.whitelist()		
 def available_units(building_name= None):
-	available_units = frappe.db.count('Units',filters={"building_name": building_name, "unit_status": "Available"})
+	available_units = frappe.db.count('Unit',filters={"building_name": building_name, "units_status": "Available"})
 	return available_units
 
 

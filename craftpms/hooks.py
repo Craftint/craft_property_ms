@@ -106,10 +106,13 @@ app_license = "."
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"craftpms.tasks.all"
-# 	],
+scheduler_events = {
+	"all": [
+		"craftpms.craft_property_ms.doctype.units.units.validate"
+	],
+}
+
+
 # 	"daily": [
 # 		"craftpms.tasks.daily"
 # 	],

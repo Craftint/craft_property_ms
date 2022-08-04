@@ -10,12 +10,16 @@
   "building_details_section",
   "building_name",
   "building_owner",
+  "building_group",
   "no_of_units",
+  "available_units",
+  "address",
+  "address_display",
   "column_break_6",
+  "photo",
   "company",
   "date",
-  "contact",
-  "available_units"
+  "contact"
  ],
  "fields": [
   {
@@ -70,11 +74,32 @@
    "fieldtype": "Data",
    "label": "Available Units",
    "read_only": 1
+  },
+  {
+   "fieldname": "building_group",
+   "fieldtype": "Data",
+   "label": "Building Group"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "depends_on": "eval:doc.address",
+   "fieldname": "address_display",
+   "fieldtype": "Small Text"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-04 14:05:03.515077",
+ "modified": "2022-08-04 14:56:04.429220",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Building",

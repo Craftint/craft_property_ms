@@ -23,7 +23,12 @@ frappe.ui.form.on("Building", {
 			}
         		});
         		
-  	}
+  	},
+	refresh: function(frm) {
+		frm.add_custom_button(__('Unit'), function() {console.log("Running")}, __('Create'));
+		frm.page.set_inner_btn_group_as_primary(__('Create'));
+		// frm.add_custom_button(__('Unit'), function() {console.log("Running")});
+	}
 });
        
 

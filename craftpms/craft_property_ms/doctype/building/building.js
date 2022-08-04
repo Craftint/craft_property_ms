@@ -1,7 +1,6 @@
 
 frappe.ui.form.on("Building", {
     	refresh: function(frm) {
-    		if(frm.doc.building_name !== ""){
 			frappe.call({
         			method:'craftpms.craft_property_ms.doctype.building.building.n_units',
         			args: {
@@ -13,7 +12,7 @@ frappe.ui.form.on("Building", {
         		});
         		
         		frappe.call({
-        			method:'craftpms.craft_property_ms.doctype.building.building.n_units',
+        			method:'craftpms.craft_property_ms.doctype.building.building.available_units',
         			args: {
             				'building_name': frm.doc.building_name,
       		        	},
@@ -22,7 +21,7 @@ frappe.ui.form.on("Building", {
 			}
         		});
         	}
-    	}
+    
 });
 
 

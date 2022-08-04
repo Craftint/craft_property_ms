@@ -20,8 +20,8 @@ frappe.ui.form.on("Building", {
 				frm.set_value("available_units", r.message);
 			}
         		});
-        	}
-    
+        		
+  	}
 });
-
+       
 

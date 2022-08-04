@@ -98,8 +98,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2022-08-04 15:51:32.949717",
+ "links": [
+  {
+   "link_doctype": "Unit",
+   "link_fieldname": "unit_status"
+  }
+ ],
+ "modified": "2022-08-04 16:24:21.265229",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Building",

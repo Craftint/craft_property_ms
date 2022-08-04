@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "UN-.###",
+ "autoname": "UNit-.####",
  "creation": "2022-08-03 16:10:04.796231",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -56,7 +56,8 @@
    "fetch_from": "building.building_name",
    "fieldname": "building_name",
    "fieldtype": "Data",
-   "label": "Building name"
+   "label": "Building name",
+   "read_only": 1
   },
   {
    "fieldname": "contract",
@@ -72,24 +73,28 @@
    "fetch_from": "contract.party_name",
    "fieldname": "unit_owner",
    "fieldtype": "Data",
-   "label": "Unit owner"
+   "label": "Unit owner",
+   "read_only": 1
   },
   {
    "fetch_from": "contract.start_date",
    "fieldname": "contract_start_date",
    "fieldtype": "Data",
-   "label": "Contract start date"
+   "label": "Contract start date",
+   "read_only": 1
   },
   {
    "fetch_from": "contract.end_date",
    "fieldname": "contract_end_date",
    "fieldtype": "Data",
-   "label": "Contract end date"
+   "label": "Contract end date",
+   "read_only": 1
   },
   {
    "fieldname": "unit_details_section",
    "fieldtype": "Section Break",
-   "label": "Unit details"
+   "label": "Unit details",
+   "read_only": 1
   },
   {
    "fieldname": "bedrooms_with_bathrooms",
@@ -156,8 +161,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2022-08-03 16:27:03.015237",
+ "links": [
+  {
+   "link_doctype": "Contract",
+   "link_fieldname": "party_type"
+  }
+ ],
+ "modified": "2022-08-04 16:31:16.418996",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Unit",

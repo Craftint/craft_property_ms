@@ -1,6 +1,6 @@
 
 frappe.ui.form.on("Building", {
-    	refresh: function(frm) {
+    	onload: function(frm) {
 			frappe.call({
         			method:'craftpms.craft_property_ms.doctype.building.building.n_units',
         			args: {
@@ -8,6 +8,7 @@ frappe.ui.form.on("Building", {
       		        	},
        		callback: function(r) {
 				frm.set_value("no_of_units", r.message);
+				frm.save()
 			}
         		});
         		
@@ -18,6 +19,7 @@ frappe.ui.form.on("Building", {
       		        	},
        		callback: function(r) {
 				frm.set_value("available_units", r.message);
+				frm.save()
 			}
         		});
         		

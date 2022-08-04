@@ -101,10 +101,10 @@
  "links": [
   {
    "link_doctype": "Unit",
-   "link_fieldname": "unit_status"
+   "link_fieldname": "building"
   }
  ],
- "modified": "2022-08-04 16:24:21.265229",
+ "modified": "2022-08-04 17:58:16.658938",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Building",

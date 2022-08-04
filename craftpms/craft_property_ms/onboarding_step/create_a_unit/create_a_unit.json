@@ -1,0 +1,19 @@
+{
+ "action": "Create Entry",
+ "creation": "2022-08-04 14:36:12.778980",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 0,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2022-08-04 14:36:12.778980",
+ "modified_by": "Administrator",
+ "name": "Create a Unit",
+ "owner": "Administrator",
+ "reference_document": "Unit",
+ "show_form_tour": 0,
+ "show_full_form": 0,
+ "title": "Create a Unit",
+ "validate_action": 1
+}

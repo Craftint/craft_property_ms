@@ -1,0 +1,32 @@
+{
+ "allow_roles": [
+  {
+   "role": "Manufacturing User"
+  }
+ ],
+ "creation": "2022-08-04 14:36:19.203747",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "none",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2022-08-04 14:36:19.203747",
+ "modified_by": "Administrator",
+ "module": "Craft Property MS",
+ "name": "Property MS",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "Introduction to Property MS"
+  },
+  {
+   "step": "Create Building"
+  },
+  {
+   "step": "Create a Unit"
+  }
+ ],
+ "subtitle": "Buildings, Units, Contracts and more",
+ "success_message": "Property MS module is all set up!",
+ "title": "Let's manage your properties!"
+}

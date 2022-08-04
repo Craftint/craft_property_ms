@@ -14,7 +14,7 @@ def n_units(building_name= None):
 			
 @frappe.whitelist()		
 def available_units(building_name= None):
-	available_units = frappe.db.count('Units',filters={"building_name": building_name, "units_status": "Available"})
+	available_units = frappe.db.count('Units',filters={"building_name": building_name, "unit_status": "Available"})
 	return available_units
 
 

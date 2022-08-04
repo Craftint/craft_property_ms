@@ -13,7 +13,7 @@ frappe.ui.form.on("Building", {
         		});
         		
         		frappe.call({
-        			method:'craftpms.craft_property_ms.doctype.building.building.n_units',
+        			method:'craftpms.craft_property_ms.doctype.building.building.available_units',
         			args: {
             				'building_name': frm.doc.building_name,
       		        	},

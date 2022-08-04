@@ -1,27 +1,27 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "B-.##",
+ "autoname": "field:building_name",
  "creation": "2022-08-03 15:56:49.910969",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "building_details_section",
-  "company",
-  "date",
   "building_name",
   "building_owner",
-  "column_break_6",
-  "contact",
   "no_of_units",
+  "column_break_6",
+  "company",
+  "date",
+  "contact",
   "available_units"
  ],
  "fields": [
   {
    "fieldname": "building_details_section",
    "fieldtype": "Section Break",
-   "label": "Building details"
+   "label": "Building Details"
   },
   {
    "fieldname": "company",
@@ -37,12 +37,17 @@
   {
    "fieldname": "building_name",
    "fieldtype": "Data",
-   "label": "Building name"
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Building Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "building_owner",
    "fieldtype": "Data",
-   "label": "Building owner"
+   "label": "Building Owner"
   },
   {
    "fieldname": "column_break_6",
@@ -56,19 +61,20 @@
   {
    "fieldname": "no_of_units",
    "fieldtype": "Data",
-   "label": "No of units",
+   "label": "No of Units",
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.no_of_units",
    "fieldname": "available_units",
    "fieldtype": "Data",
-   "label": "Available units",
+   "label": "Available Units",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-03 15:57:42.143018",
+ "modified": "2022-08-04 14:05:03.515077",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Building",

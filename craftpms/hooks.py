@@ -113,9 +113,6 @@ scheduler_events = {
 		  	 ],
 	},
 #	"all": [ ],
-
-
-
 # 	"daily": [
 # 		"craftpms.tasks.daily"
 # 	],
@@ -127,7 +124,6 @@ scheduler_events = {
 # 	]
 # 	"monthly": [
 # 		"craftpms.tasks.monthly"
-
 }
 
 # Testing

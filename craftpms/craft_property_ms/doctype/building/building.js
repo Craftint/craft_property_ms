@@ -11,7 +11,7 @@ frappe.ui.form.on("Building", {
 				frm.save()
 			}
         		});
-        		//new-branch code
+        		
         		frappe.call({
         			method:'craftpms.craft_property_ms.doctype.building.building.available_units',
         			args: {

@@ -109,13 +109,11 @@ app_license = "."
 scheduler_events = {
 	"cron": {
 		 "* * * * *": [
+			"craftpms.craft_property_ms.doctype.unit.unit.test",
 			"craftpms.craft_property_ms.doctype.unit.unit.update_unit_status",
 		  	 ],
 	},
 #	"all": [ ],
-
-
-
 # 	"daily": [
 # 		"craftpms.tasks.daily"
 # 	],
@@ -127,7 +125,6 @@ scheduler_events = {
 # 	]
 # 	"monthly": [
 # 		"craftpms.tasks.monthly"
-
 }
 
 # Testing

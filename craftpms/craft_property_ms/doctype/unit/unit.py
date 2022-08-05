@@ -24,12 +24,16 @@ class Unit(Document):
 		
 		
 def update_unit_status():
-	units = frappe.db.sql("""select name from `tabUnit`""")
+	units = frappe.db.sql("""select name from `tabUnit`""", as_dict=True)
+	print("*******************scheduler event works***************")
 	for unit in units:
 		doc = frappe.get_doc("Unit", unit.name)
 		doc.set_unit_status()
 		unitstat = frappe.db.set_value("Unit", doc.name, "unit_status", doc.unit_status)
 	return unitstat
+
+def test():
+	print("**************this will work***********")
 
 	
 

@@ -103,14 +103,17 @@ app_license = "."
 #	}
 # }
 
-# Scheduled Tasks
+#Scheduled Tasks
 # ---------------
 
-#scheduler_events = {
-#	"all": [
-#		"craftpms.craft_property_ms.doctype.units.units.validate"
-#	],
-#}
+scheduler_events = {
+	"cron": {
+		 "* * * * *": [
+			"craftpms.craft_property_ms.doctype.unit.unit.update_unit_status",
+		  	 ],
+	},
+#	"all": [ ],
+
 
 
 # 	"daily": [
@@ -124,8 +127,8 @@ app_license = "."
 # 	]
 # 	"monthly": [
 # 		"craftpms.tasks.monthly"
-# 	]
-# }
+
+}
 
 # Testing
 # -------

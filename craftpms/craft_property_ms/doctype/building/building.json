@@ -9,6 +9,7 @@
  "field_order": [
   "building_details_section",
   "building_name",
+  "unit",
   "building_owner",
   "building_group",
   "no_of_units",
@@ -95,6 +96,12 @@
    "depends_on": "eval:doc.address",
    "fieldname": "address_display",
    "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "Unit"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -104,7 +111,7 @@
    "link_fieldname": "building"
   }
  ],
- "modified": "2022-08-04 17:58:16.658938",
+ "modified": "2022-08-06 09:30:33.290142",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Building",

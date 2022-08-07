@@ -110,6 +110,7 @@ scheduler_events = {
 	"cron": {
 		 "* * * * *": [
 			"craftpms.craft_property_ms.doctype.unit.unit.update_unit_status",
+			"craftpms.craft_property_ms.doctype.unit.unit.update_contract_details",
 		  	 ],
 	},
 #	"all": [ ],

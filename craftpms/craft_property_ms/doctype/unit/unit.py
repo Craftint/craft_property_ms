@@ -5,9 +5,10 @@ import frappe
 from frappe.model.document import Document
 import erpnext
 
+
 class Unit(Document):
 	def validate(self):
-		self.set_start_date()
+		self.set_contract_details()
 		self.set_unit_status()
 	
 	def set_unit_status(self):
@@ -20,35 +21,43 @@ class Unit(Document):
 				self.unit_status = "Available"
 		else:
 			self.unit_status = "Available"
-	#todo
-	#trying to get contract details when creating a contract to unit doctype in order to update unit status
-	 
-	def set_start_date(self):
-		units_contract = frappe.db.sql("""select unit from `tabContract`""", as_dict = True)
-		units = frappe.db.sql("""select name from `tabUnit`""")
-		for unit_contract in units_contract:
-			for unit in units:
-				if unit == unit_contract:
-					doc = frappe.get_doc("Unit", unit.name)
-					contract_name =frappe.db.sql("""SELECT name FROM `tabContract` WHERE {} = {}""".format(unit_contract,unit))
-					frappe.db.set_value("Unit", doc.name, "contract_number", contract_name)
-			frappe.db.commit()
-		print(frappe.db.sql("""select contract from `tabUnit`""", as_dict = True))
+	
+	
+	def set_contract_details(self):
+		contracts = frappe.db.get_list('Contract',filters={"unit": self.name}, pluck ="name")
+		for contract2 in contracts:
+			contract1 = str(contract2)
+			unit_owners = frappe.db.get_value('Contract',  {'name': contract1}, ['party_name'])
+			start_dates = frappe.db.get_value('Contract',  {'name': contract1}, ['start_date'])
+			end_dates = frappe.db.get_value('Contract',  {'name': contract1}, ['end_date'])
+			self.contract = contract1
+			self.unit_owner = unit_owners
+			self.contract_start_date = start_dates
+			self.contract_end_date = end_dates
+
+
+
 		
 
 
-		
-		
 def update_unit_status():
-
 	units = frappe.db.sql("""select name from `tabUnit`""", as_dict=True)
 	for unit in units:
 		doc = frappe.get_doc("Unit", unit.name)
 		doc.set_unit_status()
 		unitst = frappe.db.set_value("Unit", doc.name, "unit_status", doc.unit_status)
-		print(doc)
-		
 	
+def update_contract_details():
+	units = frappe.db.sql("""select name from `tabUnit`""", as_dict=True)
+	for unit in units:
+		doc = frappe.get_doc("Unit", unit.name)
+		doc.set_contract_details()
+		cntrct = frappe.db.set_value("Unit", doc.name, "contract", doc.contract)
+		unt_ownr = frappe.db.set_value("Unit", doc.name, "unit_owner", doc.unit_owner)
+		cntrct_strt_dte = frappe.db.set_value("Unit", doc.name, "contract_start_date", doc.contract_start_date)
+		cntrct_end_dte = frappe.db.set_value("Unit", doc.name, "contract_end_date", doc.contract_end_date)
+
+
 
 
 

@@ -20,7 +20,8 @@
   "photo",
   "company",
   "date",
-  "contact"
+  "contact",
+  "che"
  ],
  "fields": [
   {
@@ -102,6 +103,12 @@
    "fieldtype": "Link",
    "label": "Unit",
    "options": "Unit"
+  },
+  {
+   "default": "0",
+   "fieldname": "che",
+   "fieldtype": "Check",
+   "label": "che"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -111,7 +118,7 @@
    "link_fieldname": "building"
   }
  ],
- "modified": "2022-08-06 09:30:33.290142",
+ "modified": "2022-08-08 08:34:06.832796",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Building",

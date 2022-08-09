@@ -87,9 +87,9 @@ app_license = "."
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+ 	"Contract": "craftpms.override.CustomContract"
+ }
 
 # Document Events
 # ---------------
@@ -97,8 +97,9 @@ app_license = "."
 
 #doc_events = {
  #	"Contract": {
+ #		"validate": "craftpms.events.events.set_contract_on_lease"
 #	}
-# }
+ #}
 
 #Scheduled Tasks
 # ---------------
@@ -108,6 +109,7 @@ scheduler_events = {
 		 "* * * * *": [
 			"craftpms.craft_property_ms.doctype.unit.unit.update_unit_status",
 			"craftpms.craft_property_ms.doctype.unit.unit.update_contract_details",
+		#	"craftpms.craft_property_ms.doctype.unit.unit.suppression_contract",
 		  	 ],
 	},
 #	"all": [ ],

@@ -109,7 +109,7 @@ scheduler_events = {
 		 "* * * * *": [
 			"craftpms.craft_property_ms.doctype.unit.unit.update_unit_status",
 			"craftpms.craft_property_ms.doctype.unit.unit.update_contract_details",
-		#	"craftpms.craft_property_ms.doctype.unit.unit.suppression_contract",
+			"craftpms.craft_property_ms.doctype.unit.unit.suppression_contract",
 		  	 ],
 	},
 #	"all": [ ],

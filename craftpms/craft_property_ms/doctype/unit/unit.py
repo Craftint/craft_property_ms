@@ -9,7 +9,6 @@ import erpnext
 class Unit(Document):
 	def validate(self):
 		self.get_contract_details()
-		self.delete_contract()
 		self.set_unit_status()
 	
 	def set_unit_status(self):
@@ -39,14 +38,6 @@ class Unit(Document):
 			self.contract_end_date = end_dates
 
 
-	def delete_contract(self):
-			unit_contract = frappe.db.get_value('Contract',  {'name': self.contract}, ['unit'])
-			if not unit_contract:
-				self.contract = None
-				self.unit_owner = None
-				self.contract_start_date = None
-				self.contract_end_date = None
-
 		
 			
 			
@@ -70,19 +61,15 @@ def update_contract_details():
 
 
 
-
-#def suppression_contract():
-#	units = frappe.db.sql("""select name from `tabUnit`""", as_dict=True)
-#	for unit in units:
-#		doc = frappe.get_doc("Unit", unit.name)
-#		doc.delete_contract()
-#		cntrct = frappe.db.set_value("Unit", doc.name, "contract", None)
-#		unt_ownr = frappe.db.set_value("Unit", doc.name, "unit_owner", None)
-#		cntrct_strt_dte = frappe.db.set_value("Unit", doc.name, "contract_start_date", None)
-#		cntrct_end_dte = frappe.db.set_value("Unit", doc.name, "contract_end_date", None)
-
-
-
+@frappe.whitelist()		
+def get_contract(contract= None, unit_owner= None, contract_start_date= None, contract_end_date= None):
+	unit_contract = frappe.db.get_value('Contract',  {'name': contract}, ['unit'])
+	if not unit_contract:
+		contract = None
+		unit_owner = None
+		contract_start_date = None
+		contract_end_date = None
+	return contract, unit_owner, contract_start_date, contract_end_date	
 
 
 

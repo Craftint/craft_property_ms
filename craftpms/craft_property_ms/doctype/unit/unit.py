@@ -49,10 +49,7 @@ class Unit(Document):
 
 		
 			
-			#else:	
-			###	self.contract_start_date = None
-				##self.contract_end_date = None
-	
+			
 		
 def update_unit_status():
 	units = frappe.db.sql("""select name from `tabUnit`""", as_dict=True)
@@ -74,15 +71,15 @@ def update_contract_details():
 
 
 
-def suppression_contract():
-	units = frappe.db.sql("""select name from `tabUnit`""", as_dict=True)
-	for unit in units:
-		doc = frappe.get_doc("Unit", unit.name)
-		doc.delete_contract()
-		cntrct = frappe.db.set_value("Unit", doc.name, "contract", None)
-		unt_ownr = frappe.db.set_value("Unit", doc.name, "unit_owner", None)
-		cntrct_strt_dte = frappe.db.set_value("Unit", doc.name, "contract_start_date", None)
-		cntrct_end_dte = frappe.db.set_value("Unit", doc.name, "contract_end_date", None)
+#def suppression_contract():
+#	units = frappe.db.sql("""select name from `tabUnit`""", as_dict=True)
+#	for unit in units:
+#		doc = frappe.get_doc("Unit", unit.name)
+#		doc.delete_contract()
+#		cntrct = frappe.db.set_value("Unit", doc.name, "contract", None)
+#		unt_ownr = frappe.db.set_value("Unit", doc.name, "unit_owner", None)
+#		cntrct_strt_dte = frappe.db.set_value("Unit", doc.name, "contract_start_date", None)
+#		cntrct_end_dte = frappe.db.set_value("Unit", doc.name, "contract_end_date", None)
 
 
 

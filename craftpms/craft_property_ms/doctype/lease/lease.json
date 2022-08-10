@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-10 09:41:45.030477",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "contract",
+  "building",
+  "unit",
+  "lease_customer",
+  "column_break_5",
+  "lease_start_date",
+  "lease_end_date",
+  "invoice_schedule",
+  "section_break_9",
+  "lease_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Contract",
+   "unique": 1
+  },
+  {
+   "fieldname": "building",
+   "fieldtype": "Link",
+   "label": "Building",
+   "options": "Building"
+  },
+  {
+   "fetch_from": "contract.unit",
+   "fieldname": "unit",
+   "fieldtype": "Data",
+   "label": "Unit",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.party_name",
+   "fieldname": "lease_customer",
+   "fieldtype": "Data",
+   "label": "Lease Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lease_start_date",
+   "fieldtype": "Date",
+   "label": "Lease start date"
+  },
+  {
+   "fieldname": "lease_end_date",
+   "fieldtype": "Date",
+   "label": "Lease end date"
+  },
+  {
+   "fieldname": "invoice_schedule",
+   "fieldtype": "Data",
+   "label": "Invoice schedule"
+  },
+  {
+   "fieldname": "lease_item",
+   "fieldtype": "Table",
+   "label": "Lease Item",
+   "options": "Lease item"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-10 10:03:06.898561",
+ "modified_by": "Administrator",
+ "module": "Craft Property MS",
+ "name": "Lease",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

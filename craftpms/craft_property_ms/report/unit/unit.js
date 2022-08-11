@@ -10,7 +10,7 @@ frappe.query_reports["unit"] = {
 			fieldtype: 'Link',
 			options : "Unit",
 			width: 200,
-			reqd: 1,
+			reqd: 0,
 		},
 		{
 			fieldname: 'unit_status',

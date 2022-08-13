@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Lease.###",
+ "creation": "2022-08-13 08:35:03.014523",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "name1",
+  "building",
+  "unit",
+  "column_break_5",
+  "la_start_date",
+  "la_end_date",
+  "passport_n",
+  "property_details_section",
+  "property_details"
+ ],
+ "fields": [
+  {
+   "fetch_from": "opportunity.customer_name",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Customer/ lead name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "building",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Building",
+   "options": "Building"
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "passport_n",
+   "fieldtype": "Data",
+   "label": "Passport N."
+  },
+  {
+   "fieldname": "la_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "la_end_date",
+   "fieldtype": "Date",
+   "label": "End date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "property_details",
+   "fieldtype": "Table",
+   "label": "Property Details",
+   "options": "Unit Child Table"
+  },
+  {
+   "fieldname": "property_details_section",
+   "fieldtype": "Section Break",
+   "label": "Property Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Contract",
+   "link_fieldname": "lease_application"
+  }
+ ],
+ "modified": "2022-08-13 10:06:28.771659",
+ "modified_by": "Administrator",
+ "module": "Craft Property MS",
+ "name": "Lease application",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

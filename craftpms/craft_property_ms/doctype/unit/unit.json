@@ -11,6 +11,8 @@
   "unit_status",
   "building",
   "building_name",
+  "address",
+  "emirate",
   "contract",
   "column_break_6",
   "unit_owner",
@@ -63,7 +65,8 @@
    "fieldname": "contract",
    "fieldtype": "Link",
    "label": "Contract",
-   "options": "Contract"
+   "options": "Contract",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_6",
@@ -158,6 +161,20 @@
    "fieldtype": "Link",
    "label": "Maintenance visit",
    "options": "Maintenance Visit"
+  },
+  {
+   "fetch_from": "building.address",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "building.emirate",
+   "fieldname": "emirate",
+   "fieldtype": "Data",
+   "label": "State/Emirate",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -167,7 +184,7 @@
    "link_fieldname": "party_type"
   }
  ],
- "modified": "2022-08-04 16:31:16.418996",
+ "modified": "2022-08-13 10:47:24.783249",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Unit",

@@ -1,3 +1,4 @@
+"""
 from frappe import _
 from frappe.model.document import Document
 from erpnext.crm.doctype.contract.contract import Contract
@@ -19,3 +20,4 @@ class CustomContract(Contract):
             self.is_on_lease = 0
 	
 	
+"""

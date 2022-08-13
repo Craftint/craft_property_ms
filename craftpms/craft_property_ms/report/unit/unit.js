@@ -21,15 +21,8 @@ frappe.query_reports["unit"] = {
 			reqd: 0,
 		},
 		{
-			fieldname: 'contract_start_date',
-			label: __('Start date'),
-			fieldtype: 'Date',
-			width: 200,
-			reqd: 0,
-		},
-		{
-			fieldname: 'Contract_end_date',
-			label: __('End date'),
+			fieldname: 'date',
+			label: __('Date'),
 			fieldtype: 'Date',
 			width: 200,
 			reqd: 0,

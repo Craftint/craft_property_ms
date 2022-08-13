@@ -10,26 +10,28 @@
   "building",
   "unit",
   "lease_customer",
+  "security_deposit",
   "column_break_5",
   "lease_start_date",
   "lease_end_date",
-  "invoice_schedule",
   "section_break_9",
-  "lease_item"
+  "lease_item",
+  "lease_invoice"
  ],
  "fields": [
   {
    "fieldname": "contract",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Contract",
    "options": "Contract",
+   "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "building",
-   "fieldtype": "Link",
-   "label": "Building",
-   "options": "Building"
+   "fieldtype": "Data",
+   "label": "Building"
   },
   {
    "fetch_from": "contract.unit",
@@ -46,19 +48,16 @@
    "read_only": 1
   },
   {
+   "fetch_from": "contract.start_date",
    "fieldname": "lease_start_date",
    "fieldtype": "Date",
    "label": "Lease start date"
   },
   {
+   "fetch_from": "contract.end_date",
    "fieldname": "lease_end_date",
    "fieldtype": "Date",
    "label": "Lease end date"
-  },
-  {
-   "fieldname": "invoice_schedule",
-   "fieldtype": "Data",
-   "label": "Invoice schedule"
   },
   {
    "fieldname": "lease_item",
@@ -73,11 +72,22 @@
   {
    "fieldname": "section_break_9",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "security_deposit",
+   "fieldtype": "Currency",
+   "label": "Security deposit"
+  },
+  {
+   "fieldname": "lease_invoice",
+   "fieldtype": "Table",
+   "label": "Lease invoice schedule",
+   "options": "Lease invoice schedule"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-10 10:03:06.898561",
+ "modified": "2022-08-12 16:20:15.721608",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Lease",

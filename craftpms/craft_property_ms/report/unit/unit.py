@@ -58,6 +58,7 @@ def get_data(filters):
 	else:
 		if (filters.get("unit_status")): conditions += "where unit_status = '%s' "%(filters.unit_status)
 		if (filters.get("unit")) : conditions += "where name = '%s'"%(filters.unit)
+	#	if (filters.get("date")) : conditions += "where (%s between contract_start_date and contract_end_date) "%(filters.date)
 
 	data = frappe.db.sql(""" 
 						Select name, unit_status, building, contract_start_date, contract_end_date

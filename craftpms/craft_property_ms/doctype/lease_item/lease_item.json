@@ -8,7 +8,7 @@
  "field_order": [
   "lease_item",
   "freaquency",
-  "paid_by"
+  "amount"
  ],
  "fields": [
   {
@@ -21,18 +21,18 @@
    "fieldname": "freaquency",
    "fieldtype": "Select",
    "label": "Freaquency",
-   "options": "d"
+   "options": "Weekly\nMonthly\nYearly"
   },
   {
-   "fieldname": "paid_by",
-   "fieldtype": "Data",
-   "label": "Paid by"
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-08-10 09:56:45.979719",
+ "modified": "2022-08-12 11:30:47.483668",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Lease item",

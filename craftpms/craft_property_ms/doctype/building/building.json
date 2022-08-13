@@ -8,20 +8,18 @@
  "engine": "InnoDB",
  "field_order": [
   "building_details_section",
+  "company",
   "building_name",
   "unit",
   "building_owner",
+  "contact",
   "building_group",
   "no_of_units",
   "available_units",
-  "address",
-  "address_display",
   "column_break_6",
   "photo",
-  "company",
-  "date",
-  "contact",
-  "che"
+  "address",
+  "emirate"
  ],
  "fields": [
   {
@@ -34,11 +32,6 @@
    "fieldtype": "Link",
    "label": "Company",
    "options": "Company"
-  },
-  {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
   },
   {
    "fieldname": "building_name",
@@ -94,21 +87,17 @@
    "options": "Address"
   },
   {
-   "depends_on": "eval:doc.address",
-   "fieldname": "address_display",
-   "fieldtype": "Small Text"
-  },
-  {
    "fieldname": "unit",
    "fieldtype": "Link",
    "label": "Unit",
    "options": "Unit"
   },
   {
-   "default": "0",
-   "fieldname": "che",
-   "fieldtype": "Check",
-   "label": "che"
+   "fetch_from": "address.emirate",
+   "fieldname": "emirate",
+   "fieldtype": "Data",
+   "label": "Emirate/State",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -118,7 +107,7 @@
    "link_fieldname": "building"
   }
  ],
- "modified": "2022-08-08 08:34:06.832796",
+ "modified": "2022-08-13 10:41:02.474468",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Building",

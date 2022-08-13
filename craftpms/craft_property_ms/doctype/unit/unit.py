@@ -37,10 +37,6 @@ class Unit(Document):
 			self.contract_start_date = start_dates
 			self.contract_end_date = end_dates
 
-
-		
-			
-			
 		
 def update_unit_status():
 	units = frappe.db.sql("""select name from `tabUnit`""", as_dict=True)

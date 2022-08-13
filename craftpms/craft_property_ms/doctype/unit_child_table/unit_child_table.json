@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-13 10:02:41.055343",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "emiratestate",
+  "building",
+  "unit",
+  "unit_details"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "emiratestate",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Emirate/State",
+   "options": "\nAbu Dhabi\nAjman\nDubai\nFujairah\nRas Al Khaimah\nSharjah\nUmm Al Quwain"
+  },
+  {
+   "columns": 3,
+   "fieldname": "building",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Building",
+   "options": "Building"
+  },
+  {
+   "columns": 2,
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "Unit"
+  },
+  {
+   "fieldname": "unit_details",
+   "fieldtype": "Text Editor",
+   "label": "Unit Details",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-13 10:07:54.696291",
+ "modified_by": "Administrator",
+ "module": "Craft Property MS",
+ "name": "Unit Child Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

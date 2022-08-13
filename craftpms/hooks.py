@@ -90,9 +90,9 @@ doctype_js = {
 # ---------------
 # Override standard doctype classes
 
-override_doctype_class = {
- 	"Contract": "craftpms.override.CustomContract"
- }
+#override_doctype_class = {
+ #	"Contract": "craftpms.override.CustomContract"
+ #}
 
 # Document Events
 # ---------------

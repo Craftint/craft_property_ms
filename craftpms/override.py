@@ -21,3 +21,9 @@ class CustomContract(Contract):
 	
 	
 """
+import frappe
+
+@frappe.whitelist()
+def make_payment_entry():
+    frappe.new_doc("Contract")
+    return ()

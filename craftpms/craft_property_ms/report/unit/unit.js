@@ -28,5 +28,17 @@ frappe.query_reports["unit"] = {
 			reqd: 0,
 		},
 		
-	]
-};
+	],
+	"formatter": function(value, row, column, data, default_formatter) {
+		value = default_formatter(value, row, column, data);
+
+		if (data && data.indent == 0.0) {
+			value = $(`<span>${value}</span>`);
+			var $value = $(value).css("font-weight", "bold");
+			value = $value.wrap("<p></p>").parent().html();
+		}
+
+		return value;
+	}
+	
+}

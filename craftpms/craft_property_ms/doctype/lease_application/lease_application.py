@@ -22,23 +22,22 @@ def get_unit_without_contracts(unit, building, property_details):
 
 
 @frappe.whitelist()
-def make_contracts(customer, la_start_date, la_end_date):
-	units = json.loads(craftpms.craft_property_ms.doctype.unit_child_doc.unit_child_table).get("unit")
-	out = []
+def make_contracts(unit, customer, la_start_date, la_end_date):
+	#units = json.loads(unit_child_table).get("unit")
+	building = frappe.db.get_value('Unit',  {'name': unit}, ['building'])
+	contract = frappe.get_doc(
+		dict(
+			doctype="Contract",
+			unit=unit,
+			party_name= customer,
+			building=building,
+			start_date = la_start_date,
+			end_date = la_end_date,
+			contract_terms = "to be discussed"
+		)
+	).insert()
+	contract.flags.ignore_mandatory = True
+	contract.save()
 
-	for i in units:
-		contract = frappe.get_doc(
-			dict(
-				doctype="Contract",
-				unit=i["unit"],
-				party_name= customer,
-				building=i["building"],
-				start_date = la_start_date,
-				end_date = la_end_date,
-			)
-		).insert()
-		contract.flags.ignore_mandatory = True
-		contract.save()
-
-	return [p.name for p in out]
+	return 
 

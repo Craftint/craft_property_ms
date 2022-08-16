@@ -73,7 +73,7 @@ frappe.ui.form.on("Lease application", {
 							  frm.call({
 								  method: 'craftpms.craft_property_ms.doctype.lease_application.lease_application.make_contracts',
 								  args: {
-									  "unit" :data,
+									  "unit" : data.property_details[0].unit,
 									  "customer": frm.doc.customer,
 									  "la_start_date": frm.doc.la_start_date,
 									  "la_end_date": frm.doc.la_end_date,

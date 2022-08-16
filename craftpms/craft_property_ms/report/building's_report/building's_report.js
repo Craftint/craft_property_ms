@@ -13,13 +13,21 @@ frappe.query_reports["Building's report"] = {
 			reqd: 0,
 		},
 		{
-			fieldname: 'unit',
-			label: __('Unit'),
+			fieldname: 'address',
+			label: __('Address'),
 			fieldtype: 'Link',
-			options: "Unit",
+			options : "Address",
 			width: 200,
 			reqd: 0,
 		},
 		
-	]
+	],
+	'formatter': function(value, row, column, data, default_formatter) {
+		value = default_formatter(value, row, column, data);
+		if (data && data.bold) {
+			value = value.bold();
+		}
+		return value;
+	}
+		
 };

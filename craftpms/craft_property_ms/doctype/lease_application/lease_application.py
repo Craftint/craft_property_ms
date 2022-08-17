@@ -5,20 +5,24 @@ import json
 from frappe.model.document import Document
 
 class Leaseapplication(Document):
-	pass
 
-@frappe.whitelist()
-def get_unit_without_contracts(unit, building, property_details):
-	units = []
-	#uni = [i.unit for i in property_details]
-	contract_units = frappe.db.sql("""select unit from `tabContract`""",as_dict= True)
-	units.append(
-			dict(
-				unit = unit,
-				building = building,
-			)
-			)
-	return units
+
+	@frappe.whitelist()
+	def get_unit_without_contracts(self):
+		units = []
+		#uni = [i.unit for i in property_details]
+		contract_units = frappe.db.sql("""select unit from `tabContract`""",as_dict= True)
+		unit =  [i.unit for i in self.property_details]
+		for table in [self.property_details]:
+			for i in table:
+				units.append(
+						dict(
+							unit = i.unit,
+							building = i.building,
+						)
+						)
+		return units
+	pass
 
 
 @frappe.whitelist()
@@ -39,5 +43,5 @@ def make_contracts(unit, customer, la_start_date, la_end_date):
 	contract.flags.ignore_mandatory = True
 	contract.save()
 
-	return 
+	return building
 

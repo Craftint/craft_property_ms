@@ -29,17 +29,19 @@ frappe.ui.form.on("Lease application", "onload", function(frm) {
 				}
 			}
 });
-
+//craftpms.craft_property_ms.doctype.lease_application.lease_application.
 frappe.ui.form.on("Lease application", {
 	refresh: function(frm) {
 	  frm.add_custom_button(__('Contract'), function(){
 
+		var selec = {property_details: frm.fields_dict.property_details.grid.get_selected_children()};
 		frm.call({
-			  method: 'craftpms.craft_property_ms.doctype.lease_application.lease_application.get_unit_without_contracts',
+			  doc: frm.doc,
+			  method: 'get_unit_without_contracts',
 			  args: {
-				"property_details" : frm.doc.property_details,
-				"unit" : frm.doc.property_details[0].unit,
-				"building" : frm.doc.property_details[0].building,
+				//"property_details" : selec.property_details[0],
+				//"unit" : selec.property_details[0].unit,
+				//"building" : selec.property_details[0].building,
 			},
 			  callback: function(r) {
 				
@@ -82,11 +84,12 @@ frappe.ui.form.on("Lease application", {
 								  callback: function(r) {
 									  if(r.message) {
 											  frappe.msgprint({
-											  title: __('Work Order not created'),
-											  message: __('Work Order already created for all items with BOM'),
-											  indicator: 'orange'
+											  title: __('Contract created'),
+											  message: __('Contract generated for the unit selected.'),
+											  indicator: 'green'
 										  });
 									  }
+									  d.hide();
 								  }
 							  });
 						  },

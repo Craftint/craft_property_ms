@@ -7,7 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "lease_item",
-  "freaquency",
+  "frequency",
+  "paid_by",
   "amount"
  ],
  "fields": [
@@ -18,21 +19,27 @@
    "options": "Item"
   },
   {
-   "fieldname": "freaquency",
-   "fieldtype": "Select",
-   "label": "Freaquency",
-   "options": "Weekly\nMonthly\nYearly"
-  },
-  {
    "fieldname": "amount",
    "fieldtype": "Currency",
    "label": "Amount"
+  },
+  {
+   "fieldname": "paid_by",
+   "fieldtype": "Link",
+   "label": "Paid by",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "Monthly\nQuaterly\nHalf-yearly\nYearly"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-08-12 11:30:47.483668",
+ "modified": "2022-08-19 16:02:20.170041",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Lease item",

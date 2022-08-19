@@ -19,6 +19,8 @@ class Leaseapplication(Document):
 						dict(
 							unit = i.unit,
 							building = i.building,
+							start_date = i.start_date,
+							end_date = i.end_date,
 						)
 						)
 		return units
@@ -26,7 +28,7 @@ class Leaseapplication(Document):
 
 
 @frappe.whitelist()
-def make_contracts(unit, customer, la_start_date, la_end_date):
+def make_contracts(unit, customer, start_date, end_date):
 	#units = json.loads(unit_child_table).get("unit")
 	building = frappe.db.get_value('Unit',  {'name': unit}, ['building'])
 	contract = frappe.get_doc(
@@ -35,8 +37,8 @@ def make_contracts(unit, customer, la_start_date, la_end_date):
 			unit=unit,
 			party_name= customer,
 			building=building,
-			start_date = la_start_date,
-			end_date = la_end_date,
+			start_date = start_date,
+			end_date = end_date,
 			contract_terms = "to be discussed"
 		)
 	).insert()

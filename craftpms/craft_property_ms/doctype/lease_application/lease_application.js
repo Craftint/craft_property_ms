@@ -12,7 +12,7 @@ frappe.ui.form.on("Lease application", "onload", function(frm) {
 				}
 				}
 			}
-			
+	
 
 });
 
@@ -61,7 +61,19 @@ frappe.ui.form.on("Lease application", {
 						  fieldname: 'building',
 						  label: __('Building'),
 						  in_list_view: 1
-					  }],
+					  },
+					  {
+						fieldtype: 'Date',
+						fieldname: 'start_date',
+						label: __('Start date'),
+						in_list_view: 1
+					  },
+					  {
+						fieldtype: 'Date',
+						fieldname: 'end_date',
+						label: __('End date'),
+						in_list_view: 1
+					}],
 					  data: r.message,
 					  get_data: () => {
 						  return r.message
@@ -77,8 +89,8 @@ frappe.ui.form.on("Lease application", {
 								  args: {
 									  "unit" : data.property_details[0].unit,
 									  "customer": frm.doc.customer,
-									  "la_start_date": frm.doc.la_start_date,
-									  "la_end_date": frm.doc.la_end_date,
+									  "start_date": data.property_details[0].start_date,
+									  "end_date": data.property_details[0].end_date,
 								  },
 								  freeze: true,
 								  callback: function(r) {
@@ -111,35 +123,3 @@ frappe.ui.form.on("Lease application", {
 
 
 			
-
-
-
-
-
-
-
-
-
-//frappe.ui.form.on('Quotation', {
-//	cost_center: function (frm) {
- //      $.each(frm.doc.items, function (k, item) {
-   //         frappe.model.set_value(item.doctype, item.name, 'cost_center', frm.doc.cost_center);
-     //   });
-//	},
-	
-//	validate: function (frm) {
-  //      if (frm.doc.items && frm.doc.items.length > 0) {
-    //        $.each(frm.doc.items, function (k, item) {
-      //          set_wise_qty_html(frm, item.doctype, item.name);
-        //    });
-        //}
-
-        // Set hardware set wise summary html table
-       // if (frm.doc.order_type == 'Door Schedule' && frm.doc.door_types && frm.doc.items && frm.doc.items.length > 0) {
-         //   let set_wise_qty = Object.values(frm.doc.door_types.reduce((a, {hardware_set, door_qty}) => {
-           //     a[hardware_set] = a[hardware_set] || {hardware_set, door_qty: 0};
-             //   a[hardware_set].door_qty += door_qty;
-               // return a;
-           // }, {}));
-
-          //  let h_list = [];

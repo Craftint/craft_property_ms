@@ -1,15 +1,16 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "LIS-.###",
  "creation": "2022-08-12 15:35:18.106439",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "schedule_date",
-  "unit",
   "paid_by",
   "lease_item",
+  "invoice_code",
   "amount"
  ],
  "fields": [
@@ -19,31 +20,32 @@
    "label": "Schedule date"
   },
   {
-   "fieldname": "unit",
-   "fieldtype": "Data",
-   "label": "Unit"
-  },
-  {
    "fieldname": "paid_by",
    "fieldtype": "Data",
    "label": "Paid by"
   },
   {
    "fieldname": "lease_item",
-   "fieldtype": "Table",
+   "fieldtype": "Link",
    "label": "Lease Item",
-   "options": "Lease item"
+   "options": "Item"
   },
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
    "label": "Amount"
+  },
+  {
+   "fieldname": "invoice_code",
+   "fieldtype": "Link",
+   "label": "Invoice code",
+   "options": "Sales Invoice"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-08-12 15:41:34.124307",
+ "modified": "2022-08-19 11:12:52.108942",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Lease invoice schedule",

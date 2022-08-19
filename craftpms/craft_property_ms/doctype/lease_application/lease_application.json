@@ -9,8 +9,6 @@
  "field_order": [
   "customer",
   "name1",
-  "building",
-  "unit",
   "column_break_5",
   "la_start_date",
   "la_end_date",
@@ -25,21 +23,6 @@
    "fieldtype": "Data",
    "label": "Customer/ lead name",
    "read_only": 1
-  },
-  {
-   "fieldname": "building",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Building",
-   "options": "Building"
-  },
-  {
-   "fieldname": "unit",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Unit",
-   "options": "Unit",
-   "reqd": 1
   },
   {
    "fieldname": "passport_n",
@@ -90,7 +73,7 @@
    "link_fieldname": "lease_application"
   }
  ],
- "modified": "2022-08-13 10:06:28.771659",
+ "modified": "2022-08-17 10:10:27.396715",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Lease application",

@@ -5,6 +5,8 @@ from erpnext.crm.doctype.contract.contract import Contract
 from datetime import date
 from frappe.utils import getdate
 import frappe
+
+
 """
 class CustomContract(Contract):
 
@@ -19,7 +21,8 @@ class CustomContract(Contract):
             self.is_on_lease = 1 
         else:
             self.is_on_lease = 0
-"""
+
+
 
 
 
@@ -41,3 +44,4 @@ def createinvsche(idx,parent,date, item, invoice_code,amount, paid_by):
 		)
 	aer.insert()
 	aer.save()
+	"""

@@ -88,8 +88,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2022-08-19 12:47:24.351392",
+ "links": [
+  {
+   "link_doctype": "Lease invoice",
+   "link_fieldname": "lease"
+  }
+ ],
+ "modified": "2022-08-22 09:34:05.593891",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Lease",

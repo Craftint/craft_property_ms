@@ -11,8 +11,6 @@ class Lease(Document):
 	def validate(self):
 		self.lease_invoice_schedule()
 
-
-
 	def lease_invoice_schedule(self):
 		#date_start = datetime.strptime(self.lease_start_date, '%Y-%m-%d')
 		#date_end = datetime.strptime(self.lease_end_date, '%Y-%m-%d')
@@ -22,12 +20,14 @@ class Lease(Document):
 		if self.lease_item:
 			if diff >= 12:
 				self.lease_item[0].amount = (frappe.db.get_value('Unit',  {'name': self.unit}, ['rent_price']))*95/100
-				self.lease_item[0].total_amount = (frappe.db.get_value('Unit',  {'name': self.unit}, ['rent_price']))*diff
+				self.lease_item[0].total_amount = (self.lease_item[0].amount)*diff
+				self.lease_item[0].building = self.building
 				self.lease_item[0].paid_by = self.lease_customer
 			else:
 				self.lease_item[0].amount = frappe.db.get_value('Unit',  {'name': self.unit}, ['rent_price'])
-				self.lease_item[0].total_amount = frappe.db.get_value('Unit',  {'name': self.unit}, ['rent_price'])*diff
-				elf.lease_item[0].paid_by = self.lease_customer
+				self.lease_item[0].total_amount = (self.lease_item[0].amount)*diff
+				self.lease_item[0].building = self.building
+				self.lease_item[0].paid_by = self.lease_customer
 
 
 		end_date = self.lease_end_date
@@ -62,6 +62,7 @@ class Lease(Document):
 					'lease_item': self.lease_item[0].lease_item,
 					'amount': self.lease_item[0].amount* freq_float,
 					'paid_by': self.lease_item[0].paid_by,
+					'building': self.building
 				})
 				start_date = add_days(period_end_date, 1)
 				idx += 1
@@ -90,4 +91,31 @@ class Lease(Document):
 
 
 
-				
+def l():
+
+	data =  frappe.db.sql(	""" 
+					select sum(amount) from `tabLease invoice schedule` where '2023-05-01' > schedule_date group by building
+					""")    
+	print(data)
+
+
+
+
+
+
+# select b.name, b.address, b.emirate, b.building_owner, b.no_of_units, u.available, u.on_lease, u.booked, l.rented 
+# from
+# (select b.name, b.address, b.emirate, b.building_owner, b.no_of_units from `tabBuilding` b) as b left join 
+# (select u.building, count(IF(unit_status="Available",name,NULL) as available,
+#  count(IF(unit_status="On lease",name,NULL) as on_lease,\
+#  count(IF(unit_status="Booked",name,NULL) as booked from `tabUnit` u group by u.building) as u left join
+#  (select sum(t.total_amount) from `tabLease item` t group by t.building) as t
+#  where b.name = u.building and
+# 	   t.building = b.name
+
+
+
+
+
+
+

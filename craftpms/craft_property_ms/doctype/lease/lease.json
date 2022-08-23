@@ -38,8 +38,9 @@
   {
    "fetch_from": "contract.unit",
    "fieldname": "unit",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Unit",
+   "options": "Unit",
    "read_only": 1
   },
   {
@@ -94,7 +95,7 @@
    "link_fieldname": "lease"
   }
  ],
- "modified": "2022-08-22 09:34:05.593891",
+ "modified": "2022-08-22 12:25:09.263572",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Lease",

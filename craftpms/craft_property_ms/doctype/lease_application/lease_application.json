@@ -10,8 +10,6 @@
   "customer",
   "name1",
   "column_break_5",
-  "la_start_date",
-  "la_end_date",
   "passport_n",
   "property_details_section",
   "property_details"
@@ -30,13 +28,6 @@
    "label": "Passport N."
   },
   {
-   "fieldname": "la_start_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Start date",
-   "reqd": 1
-  },
-  {
    "fieldname": "customer",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -47,12 +38,6 @@
   {
    "fieldname": "column_break_5",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "la_end_date",
-   "fieldtype": "Date",
-   "label": "End date",
-   "reqd": 1
   },
   {
    "fieldname": "property_details",
@@ -73,7 +58,7 @@
    "link_fieldname": "lease_application"
   }
  ],
- "modified": "2022-08-17 10:10:27.396715",
+ "modified": "2022-08-22 15:14:00.043087",
  "modified_by": "Administrator",
  "module": "Craft Property MS",
  "name": "Lease application",

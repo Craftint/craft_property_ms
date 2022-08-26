@@ -93,10 +93,8 @@ class Lease(Document):
 
 def l():
 
-	data =  frappe.db.sql(	""" 
-					select sum(amount) from `tabLease invoice schedule` where '2023-05-01' > schedule_date group by building
-					""")    
-	print(data)
+	same_unit = frappe.db.count('Contract',filters={"unit": "UNit-0011" }) 
+	print(same_unit)
 
 
 

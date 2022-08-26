@@ -3,9 +3,29 @@
 import frappe
 import json
 from frappe.model.document import Document
+from datetime import datetime
 
 class Leaseapplication(Document):
-
+	def validate(self):
+		# unit =  [i.unit for i in self.property_details]
+		# for table in [self.property_details]:
+		# 	for i in table: 
+		# 		un_cont = frappe.db.get_value('Contract',  {'unit': i.unit}, ['unit'])
+		# 		sd = frappe.db.get_value('Contract',  {'unit': i.unit}, ['start_date'])
+		# 		ed = frappe.db.get_value('Contract',  {'unit': i.unit}, ['end_date'])
+		# 		lsd = datetime.strptime(i.start_date, '%Y-%m-%d')
+		# 		led = datetime.strptime(i.end_date, '%Y-%m-%d')
+		# 		csd = datetime.combine(sd, datetime.min.time())
+		# 		ced = datetime.combine(ed, datetime.min.time())
+		# 	if un_cont:
+		# 		if csd < lsd < ced:
+		# 			frappe.throw("You can't use this period, please select another")
+		# 		elif csd < led < ced:
+		# 			frappe.throw("You can't use this period, please select another period or unit")
+		# 		elif csd < lsd < ced and csd < led < ced:
+		# 			frappe.throw("You can't use this period, please select another period or unit")
+		# 		break
+		
 
 	@frappe.whitelist()
 	def get_unit_without_contracts(self):

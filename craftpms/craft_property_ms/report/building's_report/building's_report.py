@@ -99,9 +99,10 @@ def get_data(filters):
 		if (filters.get("address")): conditions += "where b.address = '%s'" %(filters.address)
 
 	data =  frappe.db.sql(	""" 
-					select b.name, b.address, b.emirate, b.building_owner, b.no_of_units, u.available, u.on_lease, u.booked, l.rented, s.ere
+					select b.name, b.address, b.emirate, b.building_owner, u.total, u.available, u.on_lease, u.booked, l.rented, s.ere
 					from `tabBuilding` b 
-					left join (select building, COUNT(IF(unit_status="Available", name, NULL)) as available, 
+					left join (select building, COUNT(name) as total,
+					COUNT(IF(unit_status="Available", name, NULL)) as available, 
 					COUNT(IF(unit_status="On lease",name,NULL)) as on_lease,
                     COUNT(IF(unit_status="Booked", name, NULL)) as booked 
 					from `tabUnit` group by building) as u on b.name = u.building
@@ -116,19 +117,3 @@ def get_data(filters):
 
 
 
-
-# data =  frappe.db.sql(""" 
-# 					select b.name, b.address, b.emirate, b.building_owner, b.no_of_units, u.available, u.on_lease, u.booked, l.expected, l.rented
-# 					from `tabBuilding` b 
-# 					left join (select building, COUNT(IF(unit_status="Available", name, NULL)) as available, 
-# 					COUNT(IF(unit_status="On lease",name,NULL)) as on_lease,
-#                     COUNT(IF(unit_status="Booked", name, NULL)) as booked 
-# 					from `tabUnit` group by building) as u on b.name = u.building
-
-# 					left join (select building, COUNT(IF(unit_status="Available", name, NULL)) as available, 
-# 					COUNT(IF(unit_status="On lease",name,NULL)) as on_lease,
-#                     COUNT(IF(unit_status="Booked", name, NULL)) as booked 
-# 					from `tabUnit` group by building) as u on b.name = u.building
-# 					 order by b.no_of_units DESC %s
-
-# 					""" %(conditions))    
